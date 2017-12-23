@@ -1,4 +1,4 @@
-package MatalaMivne;
+package MivneMatala;
 
 import java.io.File;
 import java.util.ArrayList;

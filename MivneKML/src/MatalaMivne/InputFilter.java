@@ -1,4 +1,4 @@
-package MatalaMivne;
+package MivneMatala;
 //done
 import java.util.Scanner;
 /**

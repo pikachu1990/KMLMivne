@@ -1,26 +1,42 @@
-package MatalaMivne;
+package MivneMatala;
 
 import java.util.ArrayList;
 
 public class File {
 //done
-	private ArrayList<String> mac = new ArrayList<String>(0);
-	private ArrayList<String> ssid = new ArrayList<String>(0);
-	private ArrayList<String> am = new ArrayList<String>(0);
-	private ArrayList<String> datentime = new ArrayList<String>(0);
-	private ArrayList<Integer> channel = new ArrayList<Integer>(0);
-	private ArrayList<Integer> signal = new ArrayList<Integer>(0);
-	private ArrayList<Double> lat = new ArrayList<Double>(0);
-	private ArrayList<Double> lon = new ArrayList<Double>(0);
-	private ArrayList<Double> alt = new ArrayList<Double>(0);
-	private ArrayList<Double> acc = new ArrayList<Double>(0);
-	private ArrayList<String> type = new ArrayList<String>(0);
+	private ArrayList<Integer> INDEXList = new ArrayList<Integer>();
+	private ArrayList<Integer> SIGNAList = new ArrayList<Integer>();
+	private ArrayList<Integer> CHANNEList = new ArrayList<Integer>();
+	private ArrayList<String> TIMEList = new ArrayList<String>();
+	private ArrayList<String> IDList = new ArrayList<String>();
+	private ArrayList<String> TYPEList = new ArrayList<String>();
+	private ArrayList<String> AUTHMODEList = new ArrayList<String>();
+	private ArrayList<Integer> WIFISUMList = new ArrayList<Integer>();
+	private ArrayList<String> MACList = new ArrayList<String>();
+	private ArrayList<String> SSIDList = new ArrayList<String>();
 	private ArrayList<String> File = new ArrayList<String>();
+	private ArrayList<Double> LATList = new ArrayList<Double>();
+	private ArrayList<Double> LONList = new ArrayList<Double>();
+	private ArrayList<Double> ALTList = new ArrayList<Double>();
+	private ArrayList<Double> ACCList = new ArrayList<Double>();
+	private ArrayList<Container> Contain = new ArrayList<Container>();
+    
 	
 	public File(ArrayList<String> file) {
-		for (int i=0; i<file.size();i++) {
-			File.add(file.get(i));
-		}
+		
+		for(String List : file)
+	    {   
+	        this.File.add(List);
+	    }
+		
+		for(String List : Reader.id)
+	    {   
+	        this.IDList.add(List);
+	    }
+
+		this.File.remove(0);
+		this.File.remove(0);
+		
 		MacDivide();
 		SSIDDivide();
 		AuthModeDivide();
@@ -32,178 +48,186 @@ public class File {
 		AltDivide();
 		AccDivide();
 		TypeDivide();
+		
+		Contain.add(new Container(INDEXList,SIGNAList,CHANNEList,TIMEList,IDList,MACList,
+										SSIDList,LATList,LONList,ALTList));
+		
 		//Test();
 	}
 	
 	public void Test() {
-		for(int i=0;i<File.size();i++) {
-			System.out.println(channel.get(i));
-		}
+		//for(int i=0;i<Contain.size();i++) {
+
+			
+			
+	//	}
 	}
 	
 	public void MacDivide() {
 		for (int i=0; i<File.size();i++) {
-			mac.add(File.get(i).substring(0, File.get(i).indexOf(',')));	
+			INDEXList.add(i);
+			MACList.add(File.get(i).substring(0, File.get(i).indexOf(',')));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void SSIDDivide() {
 		for (int i=0; i<File.size();i++) {
-			ssid.add(File.get(i).substring(0, File.get(i).indexOf(',')));	
+			SSIDList.add(File.get(i).substring(0, File.get(i).indexOf(',')));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void AuthModeDivide() {
 		for (int i=0; i<File.size();i++) {
-			am.add(File.get(i).substring(0, File.get(i).indexOf(',')));	
+			AUTHMODEList.add(File.get(i).substring(0, File.get(i).indexOf(',')));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void DatenTimeDivide() {
 		for (int i=0; i<File.size();i++) {
-			datentime.add(File.get(i).substring(0, File.get(i).indexOf(',')));	
+			TIMEList.add(File.get(i).substring(0, File.get(i).indexOf(',')));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void ChannelDivide() {
 		for (int i=0; i<File.size();i++) {
-			channel.add(Integer.parseInt(File.get(i).substring(0, File.get(i).indexOf(','))));	
+			CHANNEList.add(Integer.parseInt(File.get(i).substring(0, File.get(i).indexOf(','))));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void SignalDivide() {
 		for (int i=0; i<File.size();i++) {
-			signal.add(Integer.parseInt(File.get(i).substring(0, File.get(i).indexOf(','))));	
+			SIGNAList.add(Integer.parseInt(File.get(i).substring(0, File.get(i).indexOf(','))));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void LatDivide() {
 		for (int i=0; i<File.size();i++) {
-			lat.add(Double.parseDouble((File.get(i).substring(0, File.get(i).indexOf(',')))));	
+			LATList.add(Double.parseDouble((File.get(i).substring(0, File.get(i).indexOf(',')))));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void LonDivide() {
 		for (int i=0; i<File.size();i++) {
-			lon.add(Double.parseDouble((File.get(i).substring(0, File.get(i).indexOf(',')))));	
+			LONList.add(Double.parseDouble((File.get(i).substring(0, File.get(i).indexOf(',')))));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void AltDivide() {
 		for (int i=0; i<File.size();i++) {
-			alt.add(Double.parseDouble((File.get(i).substring(0, File.get(i).indexOf(',')))));	
+			ALTList.add(Double.parseDouble((File.get(i).substring(0, File.get(i).indexOf(',')))));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void AccDivide() {
 		for (int i=0; i<File.size();i++) {
-			acc.add(Double.parseDouble(File.get(i).substring(0, File.get(i).indexOf(','))));	
+			ACCList.add(Double.parseDouble(File.get(i).substring(0, File.get(i).indexOf(','))));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
 	
 	public void TypeDivide() {
+
 		for (int i=0; i<File.size();i++) {
-			type.add(File.get(i).substring(0, File.get(i).length()));	
+			TYPEList.add(File.get(i).substring(0, File.get(i).length()));	
 			File.set(i, File.get(i).substring(File.get(i).indexOf(',')+1, File.get(i).length()));
 		}
 	}
-
-	public ArrayList<String> getMac() {
-		return mac;
+	
+	public ArrayList<Container> getContain() {
+		return Contain;
 	}
 
-	public void setMac(ArrayList<String> mac) {
-		this.mac = mac;
+	public void setContain(ArrayList<Container> contain) {
+		Contain = contain;
 	}
 
-	public ArrayList<String> getSsid() {
-		return ssid;
+	public ArrayList<Integer> getINDEXList() {
+		return INDEXList;
 	}
 
-	public void setSsid(ArrayList<String> ssid) {
-		this.ssid = ssid;
+	public void setINDEXList(ArrayList<Integer> iNDEXList) {
+		INDEXList = iNDEXList;
 	}
 
-	public ArrayList<String> getAm() {
-		return am;
+	public ArrayList<Integer> getSIGNAList() {
+		return SIGNAList;
 	}
 
-	public void setAm(ArrayList<String> am) {
-		this.am = am;
+	public void setSIGNAList(ArrayList<Integer> sIGNAList) {
+		SIGNAList = sIGNAList;
 	}
 
-	public ArrayList<String> getDatentime() {
-		return datentime;
+	public ArrayList<Integer> getCHANNEList() {
+		return CHANNEList;
 	}
 
-	public void setDatentime(ArrayList<String> datentime) {
-		this.datentime = datentime;
+	public void setCHANNEList(ArrayList<Integer> cHANNEList) {
+		CHANNEList = cHANNEList;
 	}
 
-	public ArrayList<Integer> getChannel() {
-		return channel;
+	public ArrayList<String> getTIMEList() {
+		return TIMEList;
 	}
 
-	public void setChannel(ArrayList<Integer> channel) {
-		this.channel = channel;
+	public void setTIMEList(ArrayList<String> tIMEList) {
+		TIMEList = tIMEList;
 	}
 
-	public ArrayList<Integer> getSignal() {
-		return signal;
+	public ArrayList<String> getIDList() {
+		return IDList;
 	}
 
-	public void setSignal(ArrayList<Integer> signal) {
-		this.signal = signal;
+	public void setIDList(ArrayList<String> iDList) {
+		IDList = iDList;
 	}
 
-	public ArrayList<Double> getLat() {
-		return lat;
+	public ArrayList<String> getTYPEList() {
+		return TYPEList;
 	}
 
-	public void setLat(ArrayList<Double> lat) {
-		this.lat = lat;
+	public void setTYPEList(ArrayList<String> tYPEList) {
+		TYPEList = tYPEList;
 	}
 
-	public ArrayList<Double> getLon() {
-		return lon;
+	public ArrayList<String> getAUTHMODEList() {
+		return AUTHMODEList;
 	}
 
-	public void setLon(ArrayList<Double> lon) {
-		this.lon = lon;
+	public void setAUTHMODEList(ArrayList<String> aUTHMODEList) {
+		AUTHMODEList = aUTHMODEList;
 	}
 
-	public ArrayList<Double> getAlt() {
-		return alt;
+	public ArrayList<Integer> getWIFISUMList() {
+		return WIFISUMList;
 	}
 
-	public void setAlt(ArrayList<Double> alt) {
-		this.alt = alt;
+	public void setWIFISUMList(ArrayList<Integer> wIFISUMList) {
+		WIFISUMList = wIFISUMList;
 	}
 
-	public ArrayList<Double> getAcc() {
-		return acc;
+	public ArrayList<String> getMACList() {
+		return MACList;
 	}
 
-	public void setAcc(ArrayList<Double> acc) {
-		this.acc = acc;
+	public void setMACList(ArrayList<String> mACList) {
+		MACList = mACList;
 	}
 
-	public ArrayList<String> getType() {
-		return type;
+	public ArrayList<String> getSSIDList() {
+		return SSIDList;
 	}
 
-	public void setType(ArrayList<String> type) {
-		this.type = type;
+	public void setSSIDList(ArrayList<String> sSIDList) {
+		SSIDList = sSIDList;
 	}
 
 	public ArrayList<String> getFile() {
@@ -213,6 +237,37 @@ public class File {
 	public void setFile(ArrayList<String> file) {
 		File = file;
 	}
-	
-	
+
+	public ArrayList<Double> getLATList() {
+		return LATList;
+	}
+
+	public void setLATList(ArrayList<Double> lATList) {
+		LATList = lATList;
+	}
+
+	public ArrayList<Double> getLONList() {
+		return LONList;
+	}
+
+	public void setLONList(ArrayList<Double> lONList) {
+		LONList = lONList;
+	}
+
+	public ArrayList<Double> getALTList() {
+		return ALTList;
+	}
+
+	public void setALTList(ArrayList<Double> aLTList) {
+		ALTList = aLTList;
+	}
+
+	public ArrayList<Double> getACCList() {
+		return ACCList;
+	}
+
+	public void setACCList(ArrayList<Double> aCCList) {
+		ACCList = aCCList;
+	}
+		
 }
