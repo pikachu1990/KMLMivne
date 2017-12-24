@@ -19,6 +19,7 @@ public class Main {
 		InputFilter Location = new InputFilter();
 		Filter Testing = new Filter(Location,Filtered.getContainerMAC());
 		RdyToPrint Printing = new RdyToPrint(Testing.getContainerFiltered());
+		Writer FilteredFirst = new Writer("C:\\Mivne\\FilteredTest.csv",Printing.getTOPRINT());
 		FileFiltered Prep = new FileFiltered(Printing.getTOPRINT());
 		ListFile Done = new ListFile(Prep.getContain().get(0),"MAC",3);
 		Done.getContainerMAC().get(0).getALTList();
