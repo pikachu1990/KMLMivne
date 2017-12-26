@@ -58,7 +58,7 @@ public class Algorithm2 {
 					PIE(i,j,s,k);
 					
 					}
-				
+					
 					LINEList.add(j);
 					PIList.add(PI);
 					PI = 1;

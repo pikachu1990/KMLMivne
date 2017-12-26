@@ -25,8 +25,6 @@ public class Main {
 		Writer FilteredFirst = new Writer("C:\\Mivne\\FilteredTest.csv",Printing.getTOPRINT());
 		FileFiltered Prep = new FileFiltered(Printing.getTOPRINT());
 		ListFile Done = new ListFile(Prep.getContain().get(0),"MAC",3);
-		/*for (int i=0;i<Done.getContainerMAC().size();i++) {
-		System.out.println(Done.getContainerMAC().get(i).getALTList());}*/
 		
 	}
 }
