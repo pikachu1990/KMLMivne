@@ -64,7 +64,7 @@ public class ListFile {
 			PreparingForContainerString(CHOICE);}//PreparingForContainer prepares an Object Container ArrayList that contains all the info.
 			
 			System.out.println("Number of groups : " +ContainerMAC.size());
-			Test();//Test option.
+			//Test();//Test option.
 	}
 	
 	public void Test() {
@@ -94,18 +94,18 @@ public class ListFile {
 	}
 	
 	public void FilteredToValueMAC(int Value) {//Gets Value - Amount wanted from FilteredWord , Ex. Top 10 Signals for each MAC - > MAC FilteredWord, 10 - Value.
-		String Word = SorterSignal.get(0).MAC;
+		String Word = SorterMAC.get(0).MAC;
 		int counter=0;
-		for (int i=0;i<SorterSignal.size()-1;i++) {
-			if (Word.equals(SorterSignal.get(i+1).MAC)){
+		for (int i=0;i<SorterMAC.size()-1;i++) {
+			if (Word.equals(SorterMAC.get(i+1).MAC)){
 				counter++;
 			}
-			if (!Word.equals(SorterSignal.get(i+1).MAC)) {
+			if (!Word.equals(SorterMAC.get(i+1).MAC)) {
 				counter=0;
-				Word=SorterSignal.get(i+1).MAC;
+				Word=SorterMAC.get(i+1).MAC;
 			}
 			if (counter>=Value) {
-				SorterSignal.remove(i);
+				SorterMAC.remove(i);
 				i--;
 			}
 		}
@@ -152,7 +152,7 @@ public class ListFile {
 		LONList.add(SorterSignal.get(0).LON);
 		ALTList.add(SorterSignal.get(0).ALT);
 		
-		for (int i=0;i<SorterSignal.size()-1;i++) {
+		for (int i=0;i<FilteredIndex.size()-1;i++) {
 			if (FilteredIndex.get(i).equals(FilteredIndex.get(i+1))){
 				INDEXList.add(SorterSignal.get(i+1).INDEX);
 				SIGNAList.add(SorterSignal.get(i+1).SIGNAL);
