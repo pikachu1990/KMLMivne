@@ -20,6 +20,7 @@ public class Main {
 		InputFilter Location = new InputFilter();
 		Filter Testing = new Filter(Location,Filtered.getContainerMAC());
 		Kml3 KML = new Kml3(Filtered.getContainerMAC());
+		Kml3 KML2 = new Kml3(Testing.getContainerFiltered());
 		RdyToPrint Printing = new RdyToPrint(Testing.getContainerFiltered(),1);
 		Writer FilteredFirst = new Writer("C:\\Mivne\\FilteredTest.csv",Printing.getTOPRINT());
 		
