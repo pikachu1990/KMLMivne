@@ -22,7 +22,7 @@ public class Main {
 		Writer FilteredFirst2 = new Writer("C:\\Mivne\\FilteredTest2.csv",test2.getTOPRINT());*/
 		
 		
-		ReaderAlg CHECK = new ReaderAlg ("C:\\Mivne\\_comb_no_gps_ts1.csv");
+		ReaderAlg CHECK = new ReaderAlg ("C:\\Mivne\\_comb_no_gps_ts2_.csv");
 		ReaderAlg DATA = new ReaderAlg ("C:\\Mivne\\FileFiltered.csv");
 		FilteredContain CHECK2 = new FilteredContain (CHECK.getFileList());
 		FilteredContain DATA2 = new FilteredContain (DATA.getFileList());
