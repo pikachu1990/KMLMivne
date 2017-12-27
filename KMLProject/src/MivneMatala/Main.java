@@ -14,21 +14,23 @@ public class Main {
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 		
-		/*FolderReader Check = new FolderReader("C:\\Mivne\\","WigleWifi");
+		FolderReader Check = new FolderReader("C:\\Mivne\\","WigleWifi");
 		File File = new File(Check.getFinalArray());
 		ListFile Filtered = new ListFile(File.getContain().get(0),"SIGNAL",10);
-		Algorithm2 blabla = new Algorithm2(Filtered.getContainerMAC(),Filtered.getContainerMAC());
-		RdyToPrint test2 = new RdyToPrint(blabla.getALGOAFTER(),0);
-		Writer FilteredFirst2 = new Writer("C:\\Mivne\\FilteredTest2.csv",test2.getTOPRINT());*/
+		InputFilter Location = new InputFilter();
+		Filter Testing = new Filter(Location,Filtered.getContainerMAC());
+		Kml3 KML = new Kml3(Filtered.getContainerMAC());
+		RdyToPrint Printing = new RdyToPrint(Testing.getContainerFiltered(),1);
+		Writer FilteredFirst = new Writer("C:\\Mivne\\FilteredTest.csv",Printing.getTOPRINT());
 		
 		
-		ReaderAlg CHECK = new ReaderAlg ("C:\\Mivne\\_comb_no_gps_ts2_.csv");
+		/*ReaderAlg CHECK = new ReaderAlg ("C:\\Mivne\\_comb_no_gps_ts2_.csv");
 		ReaderAlg DATA = new ReaderAlg ("C:\\Mivne\\FileFiltered.csv");
 		FilteredContain CHECK2 = new FilteredContain (CHECK.getFileList());
 		FilteredContain DATA2 = new FilteredContain (DATA.getFileList());
 		Algorithm2 Test = new Algorithm2(CHECK2.getContain(),DATA2.getContain());
 		RdyToPrint test2 = new RdyToPrint(Test.getALGOAFTER(),0);
-		Writer FilteredFirst2 = new Writer("C:\\Mivne\\FilteredTest2.csv",test2.getTOPRINT());
+		Writer FilteredFirst2 = new Writer("C:\\Mivne\\FilteredTest2.csv",test2.getTOPRINT());*/
 		
 		
 		/*InputFilter Location = new InputFilter();

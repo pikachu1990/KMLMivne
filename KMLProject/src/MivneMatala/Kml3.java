@@ -17,21 +17,26 @@ import de.micromata.opengis.kml.v_2_2_0.TimeStamp;
 
 	public class Kml3 {
 		private static Integer ID=0;
+		private ArrayList<Container> InfoByInput = new ArrayList<Container>();
 		// Function to cast Double to string
+		public Kml3(ArrayList<Container> infobyinput) {
+			
+			for(Container List : infobyinput) {this.InfoByInput.add(List);}
+			ToKml();
+		}	
 	
-			public static void ToKml(FileFiltered InfoByInput){	
+			public void ToKml(){	
 				final Kml kml = new Kml();
 				Document document = kml.createAndSetDocument();
 
-				for (int i = 0; i < InfoByInput.getIDList().size(); i++) {
+				for (int i = 0; i < InfoByInput.size(); i++) {
 					ID++;
-					String time=InfoByInput.getTIMEList().get(i);
-					System.out.println(InfoByInput.getTIMEList().get(i));
+					String time=InfoByInput.get(i).getTIMEList().get(0);
 					Timestamp t=Timestamp.valueOf(time);
-					Placemark p=KmlFactory.createPlacemark().withName("Placemark"+i+" "+InfoByInput.getIDList().get(i));
+					Placemark p=KmlFactory.createPlacemark().withName("Placemark"+i+" "+InfoByInput.get(i).getIDList().get(0));
 					p.createAndSetTimeStamp().addToTimeStampSimpleExtension(t);
 					document.createAndAddPlacemark().withOpen(Boolean.TRUE).withTimePrimitive(p.getTimePrimitive()).createAndSetPoint()
-					.addToCoordinates(InfoByInput.getLONList().get(i),InfoByInput.getLATList().get(i));
+					.addToCoordinates(InfoByInput.get(i).getLONList().get(0),InfoByInput.get(i).getLATList().get(0));
 				}
 
 				try {
