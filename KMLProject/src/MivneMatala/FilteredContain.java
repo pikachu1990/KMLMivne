@@ -2,7 +2,7 @@ package MivneMatala;
 
 import java.util.ArrayList;
 
-public class FileFiltered {
+public class FilteredContain {
 //done
 	private ArrayList<Integer> INDEXList = new ArrayList<Integer>();
 	private ArrayList<Integer> SIGNAList = new ArrayList<Integer>();
@@ -22,7 +22,7 @@ public class FileFiltered {
 	private ArrayList<Container> Contain = new ArrayList<Container>();
 	
 	
-	public FileFiltered(ArrayList<String> File) {
+	public FilteredContain(ArrayList<String> File) {
 	    
 		for(String List : File)
 	    {   
@@ -40,11 +40,12 @@ public class FileFiltered {
 		
 			for (int j=0; j<WIFISUMList.get(i);j++) {//changed to i orginal i-1 on all of them
 			if (j!=0) {
-				LATList.add(LATList.get(i));
-				LONList.add(LONList.get(i));
-				ALTList.add(ALTList.get(i));
-				TIMEList.add(TIMEList.get(i));
-				IDList.add(IDList.get(i));}//till here
+				LATList.add(LATList.get(0));
+				LONList.add(LONList.get(0));
+				ALTList.add(ALTList.get(0));
+				TIMEList.add(TIMEList.get(0));
+				IDList.add(IDList.get(0));}//till here
+				INDEXList.add(i);
 				SSIDListDivide(i);
 				MACListDivide(i);
 				CHANNEListDivide(i);
@@ -52,18 +53,51 @@ public class FileFiltered {
 			
 			}
 			
+			ArrayList<Integer> copyINDEX = new ArrayList<Integer>();
+			ArrayList<Integer> copySIGNAL = new ArrayList<Integer>();
+			ArrayList<Integer> copyCHANNEL = new ArrayList<Integer>();
+			ArrayList<String> copyTIME = new ArrayList<String>();
+			ArrayList<String> copyID = new ArrayList<String>();
+			ArrayList<String> copyMAC = new ArrayList<String>();
+			ArrayList<String> copySSID = new ArrayList<String>();
+			ArrayList<Double> copyLAT = new ArrayList<Double>();
+			ArrayList<Double> copyLON = new ArrayList<Double>();
+			ArrayList<Double> copyALT = new ArrayList<Double>();
+			copyINDEX.addAll(INDEXList);
+			copySIGNAL.addAll(SIGNAList);
+			copyCHANNEL.addAll(CHANNEList);
+			copyTIME.addAll(TIMEList);
+			copyID.addAll(IDList);
+			copyMAC.addAll(MACList);
+			copySSID.addAll(SSIDList);
+			copyLAT.addAll(LATList);
+			copyLON.addAll(LONList);
+			copyALT.addAll(ALTList);
+			Contain.add(new Container(copyINDEX,copySIGNAL,copyCHANNEL,copyTIME,copyID,copyMAC,copySSID,copyLAT,copyLON,copyALT));
+			INDEXList.clear();
+			SIGNAList.clear();
+			CHANNEList.clear();
+			TIMEList.clear();
+			IDList.clear();
+			MACList.clear();
+			SSIDList.clear();
+			LATList.clear();
+			LONList.clear();
+			ALTList.clear();
+		
 		}
 		
-		Contain.add(new Container(INDEXList,SIGNAList,CHANNEList,TIMEList,IDList,MACList,
-				SSIDList,LATList,LONList,ALTList));
 		
-		//Test();
+		Test();
 	}
 
 	public void Test() {
-		for(int i=0;i<LATList.size();i++) {
-			System.out.println(LATList.get(i));
-		}
+		for (int i=0;i<Contain.size();i++) {
+			System.out.println("index - "+Contain.get(i).getINDEXList()+"Date - "+ Contain.get(i).getTIMEList()+"ID - "
+					+Contain.get(i).getIDList()+"Lat - "+Contain.get(i).getLATList().toString()+"Lon - "+Contain.get(i).getLONList().toString()+"Alt - "
+					+Contain.get(i).getALTList().toString()+"SSID -"
+					+Contain.get(i).getSSIDList()+"MAC - "+Contain.get(i).getMACList()+"Channel -"+Contain.get(i).getCHANNEList()+"Signal -"+Contain.get(i).getSIGNAList());
+			}
 	}
 	
 	public ArrayList<String> getFile() {

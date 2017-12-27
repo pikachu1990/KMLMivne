@@ -33,9 +33,6 @@ public class File {
 	    {   
 	        this.IDList.add(List);
 	    }
-
-		this.File.remove(0);
-		this.File.remove(0);
 		
 		MacDivide();
 		SSIDDivide();

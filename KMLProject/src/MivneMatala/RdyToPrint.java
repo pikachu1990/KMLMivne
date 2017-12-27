@@ -7,10 +7,12 @@ public class RdyToPrint {
 	private ArrayList<Container> PRINT = new ArrayList<Container>();
 	private ArrayList<String>TOPRINT = new ArrayList<String>();
 	private ArrayList<Container> Contain = new ArrayList<Container>();
+	int TITLE=0;
 	
-	public RdyToPrint(ArrayList<Container> print) {
+	public RdyToPrint(ArrayList<Container> print,int title) {
 		
 		for(Container List : print) {this.PRINT.add(List);}
+		this.TITLE = title;
 		
 		ConvertionToPrint();
 		ConvertionToUse();
@@ -26,7 +28,7 @@ public class RdyToPrint {
 	
 	public void ConvertionToPrint() {
 		String Container = "";
-		TOPRINT.add("Title");
+		if (TITLE == 0 ) {TOPRINT.add("Title");}
 		for (int i=0;i<PRINT.size();i++) {
 			
 			Container = PRINT.get(i).getTIMEList().get(0)+","+PRINT.get(i).getIDList().get(0)+","+PRINT.get(i).getLATList().get(0)+","+

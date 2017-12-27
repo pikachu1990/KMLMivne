@@ -28,7 +28,7 @@ class SorterMAC implements Comparable<SorterMAC> {
     }
         public int compareTo(SorterMAC o) {
         	
-        	int i = MAC.compareTo(o.MAC);
+        	int i = this.MAC.compareTo(o.MAC);
             if (i != 0) return i;
 
             return this.SIGNAL-o.SIGNAL;

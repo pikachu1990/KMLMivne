@@ -24,17 +24,29 @@ class SorterIDLatLonAlt implements Comparable<SorterIDLatLonAlt> {
     	this.ID = id + "";
     	this.MAC = mac + "";
     	this.SSID = ssid + "";
-    	Name = ID + String.valueOf(this.LAT) + String.valueOf(this.LON) + String.valueOf(this.ALT);
-    	
+    	//Name = String.valueOf(this.TIME) + ID + String.valueOf(this.LAT) + String.valueOf(this.LON) + String.valueOf(this.ALT);
     }
         public int compareTo(SorterIDLatLonAlt o) {
 
-        	int i = this.Name.compareTo(o.Name);
-            if (i != 0) return i;
-            
-            return this.SIGNAL-o.SIGNAL;
-            
-        }
+        	
+        	int result = this.TIME.compareTo(o.TIME);
+        	     if (result == 0) {
+        	        result = this.ID.compareTo(o.ID);
+        	     }
+        	     if (result == 0) {
+        	        result = String.valueOf(this.LAT).compareTo(String.valueOf(o.LAT));
+        	     }
+        	     if (result == 0) {
+         	        result = String.valueOf(this.LON).compareTo(String.valueOf(o.LON));
+         	     }
+        	     if (result == 0) {
+         	        result = String.valueOf(this.ALT).compareTo(String.valueOf(o.ALT));
+         	     }
+        	     if (result == 0) {
+        	    	 result = this.SIGNAL-o.SIGNAL;
+        	     }
+        	 return result;
+    }
         
         
 		public int getINDEX() {

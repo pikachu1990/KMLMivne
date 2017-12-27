@@ -32,7 +32,7 @@ public class Algorithm2 {
 		
 		Checker();
 		Algo1();
-		Test();
+	//	Test();
 		
 	}
 	
@@ -134,5 +134,159 @@ public class Algorithm2 {
 		}
 		
 	}
+
+	public ArrayList<Container> getCHECK() {
+		return CHECK;
+	}
+
+	public void setCHECK(ArrayList<Container> cHECK) {
+		CHECK = cHECK;
+	}
+
+	public ArrayList<Container> getDATA() {
+		return DATA;
+	}
+
+	public void setDATA(ArrayList<Container> dATA) {
+		DATA = dATA;
+	}
+
+	public ArrayList<Double> getPIList() {
+		return PIList;
+	}
+
+	public void setPIList(ArrayList<Double> pIList) {
+		PIList = pIList;
+	}
+
+	public ArrayList<Integer> getLINEList() {
+		return LINEList;
+	}
+
+	public void setLINEList(ArrayList<Integer> lINEList) {
+		LINEList = lINEList;
+	}
+
+	public double getPI() {
+		return PI;
+	}
+
+	public void setPI(double pI) {
+		PI = pI;
+	}
+
+	public ArrayList<PIContainer> getPIContain() {
+		return PIContain;
+	}
+
+	public void setPIContain(ArrayList<PIContainer> pIContain) {
+		PIContain = pIContain;
+	}
+
+	public int getDIFF() {
+		return DIFF;
+	}
+
+	public void setDIFF(int dIFF) {
+		DIFF = dIFF;
+	}
+
+	public double getWEIGHT() {
+		return WEIGHT;
+	}
+
+	public void setWEIGHT(double wEIGHT) {
+		WEIGHT = wEIGHT;
+	}
+
+	public double getSUMLATw() {
+		return SUMLATw;
+	}
+
+	public void setSUMLATw(double sUMLATw) {
+		SUMLATw = sUMLATw;
+	}
+
+	public double getSUMLONw() {
+		return SUMLONw;
+	}
+
+	public void setSUMLONw(double sUMLONw) {
+		SUMLONw = sUMLONw;
+	}
+
+	public double getSUMALTw() {
+		return SUMALTw;
+	}
+
+	public void setSUMALTw(double sUMALTw) {
+		SUMALTw = sUMALTw;
+	}
+
+	public double getSUMWEIGHT() {
+		return SUMWEIGHT;
+	}
+
+	public void setSUMWEIGHT(double sUMWEIGHT) {
+		SUMWEIGHT = sUMWEIGHT;
+	}
+
+	public ArrayList<Double> getFINALAT() {
+		return FINALAT;
+	}
+
+	public void setFINALAT(ArrayList<Double> fINALAT) {
+		FINALAT = fINALAT;
+	}
+
+	public ArrayList<Double> getFINALON() {
+		return FINALON;
+	}
+
+	public void setFINALON(ArrayList<Double> fINALON) {
+		FINALON = fINALON;
+	}
+
+	public ArrayList<Double> getFINALALT() {
+		return FINALALT;
+	}
+
+	public void setFINALALT(ArrayList<Double> fINALALT) {
+		FINALALT = fINALALT;
+	}
+
+	public ArrayList<Container> getALGOAFTER() {
+		return ALGOAFTER;
+	}
+
+	public void setALGOAFTER(ArrayList<Container> aLGOAFTER) {
+		ALGOAFTER = aLGOAFTER;
+	}
+
+	public int getX() {
+		return X;
+	}
+
+	public int getY() {
+		return Y;
+	}
+
+	public int getZ() {
+		return Z;
+	}
+
+	public int getJ() {
+		return J;
+	}
+
+	public double getI() {
+		return I;
+	}
+
+	public int getP() {
+		return P;
+	}
+	
+	
 	
 }
