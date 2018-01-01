@@ -20,7 +20,7 @@ public class FileFiltered {
 	private ArrayList<Double> ALTList = new ArrayList<Double>();
 	private ArrayList<Double> ACCList = new ArrayList<Double>();
 	private ArrayList<Container> Contain = new ArrayList<Container>();
-	
+	private int s=0;
 	
 	public FileFiltered(ArrayList<String> File) {
 	    
@@ -40,17 +40,18 @@ public class FileFiltered {
 		
 			for (int j=0; j<WIFISUMList.get(i);j++) {//changed to i orginal i-1 on all of them
 			if (j!=0) {
-				LATList.add(LATList.get(i));
-				LONList.add(LONList.get(i));
-				ALTList.add(ALTList.get(i));
-				TIMEList.add(TIMEList.get(i));
-				IDList.add(IDList.get(i));}//till here
+				LATList.add(LATList.get(s));
+				LONList.add(LONList.get(s));
+				ALTList.add(ALTList.get(s));
+				TIMEList.add(TIMEList.get(s));
+				IDList.add(IDList.get(s));}//till here
 				SSIDListDivide(i);
 				MACListDivide(i);
 				CHANNEListDivide(i);
 				SIGNALListDivide(i);
 			
 			}
+			s = s+WIFISUMList.get(i);
 			
 		}
 		
