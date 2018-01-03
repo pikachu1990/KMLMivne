@@ -48,7 +48,7 @@ public class GuiKMLBase extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         SaveLoc = new javax.swing.JTextField();
-        SaveLoc1 = new javax.swing.JTextField();
+        KML = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         Devices = new javax.swing.JTextField();
         Groups = new javax.swing.JTextField();
@@ -81,7 +81,7 @@ public class GuiKMLBase extends javax.swing.JFrame {
         DeviceFilterBottun1 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         SaveLoc2 = new javax.swing.JTextField();
-        SaveLoc3 = new javax.swing.JTextField();
+        KML2 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         Devices1 = new javax.swing.JTextField();
         Groups1 = new javax.swing.JTextField();
@@ -151,10 +151,10 @@ public class GuiKMLBase extends javax.swing.JFrame {
             }
         });
 
-        SaveLoc1.setText("Save as KML");
-        SaveLoc1.addActionListener(new java.awt.event.ActionListener() {
+        KML.setText("Save as KML");
+        KML.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveLoc1ActionPerformed(evt);
+                KMLActionPerformed(evt);
             }
         });
 
@@ -334,10 +334,10 @@ public class GuiKMLBase extends javax.swing.JFrame {
             }
         });
 
-        SaveLoc3.setText("Save as KML");
-        SaveLoc3.addActionListener(new java.awt.event.ActionListener() {
+        KML2.setText("Save as KML");
+        KML2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveLoc3ActionPerformed(evt);
+                KML2ActionPerformed(evt);
             }
         });
 
@@ -511,7 +511,7 @@ public class GuiKMLBase extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(SaveLoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(KML, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5))
@@ -643,7 +643,7 @@ public class GuiKMLBase extends javax.swing.JFrame {
                                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SaveLoc3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(KML2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton7)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -679,7 +679,7 @@ public class GuiKMLBase extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
                     .addComponent(SaveLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SaveLoc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(KML, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5)
                     .addComponent(jLabel9))
                 .addGap(11, 11, 11)
@@ -712,12 +712,13 @@ public class GuiKMLBase extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(DateFilterBottun1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(SaveLoc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7)
-                    .addComponent(jLabel17)
-                    .addComponent(SaveLoc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton6)
+                        .addComponent(KML2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton7)
+                        .addComponent(SaveLoc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
@@ -807,12 +808,13 @@ public class GuiKMLBase extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveLocActionPerformed
 
-    private void SaveLoc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveLoc1ActionPerformed
+    private void KMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KMLActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SaveLoc1ActionPerformed
+    }//GEN-LAST:event_KMLActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        Kml3 b = new Kml3 (toFilter,KML.getText());
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void DevicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DevicesActionPerformed
@@ -1071,12 +1073,13 @@ public class GuiKMLBase extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveLoc2ActionPerformed
 
-    private void SaveLoc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveLoc3ActionPerformed
+    private void KML2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KML2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SaveLoc3ActionPerformed
+    }//GEN-LAST:event_KML2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        Kml3 a = new Kml3 (Filtered2,KML2.getText());
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void Devices1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Devices1ActionPerformed
@@ -1254,6 +1257,8 @@ public class GuiKMLBase extends javax.swing.JFrame {
     private javax.swing.JTextField Folder;
     private javax.swing.JTextField Groups;
     private javax.swing.JTextField Groups1;
+    private javax.swing.JTextField KML;
+    private javax.swing.JTextField KML2;
     private javax.swing.JTextField LatFilter;
     private javax.swing.JButton LocationFilterBottun;
     private javax.swing.JTextField LonFilter;
@@ -1266,9 +1271,7 @@ public class GuiKMLBase extends javax.swing.JFrame {
     private javax.swing.JTextField SIGNAL2;
     private javax.swing.JTextField SIGNAL3;
     private javax.swing.JTextField SaveLoc;
-    private javax.swing.JTextField SaveLoc1;
     private javax.swing.JTextField SaveLoc2;
-    private javax.swing.JTextField SaveLoc3;
     private javax.swing.JTextField SaveLoc4;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
